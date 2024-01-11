@@ -4,6 +4,7 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
+  Image,
 } from 'react-native';
 import {useEffect, useState} from 'react';
 
@@ -28,15 +29,25 @@ function ShowTextFromForm({navigation, route}: any) {
     <ImageBackground
       source={require('../Assets/Images/background3.jpeg')}
       style={{flex: 1, width: mobileW, height: mobileH}}>
+      <Image
+        style={{
+          alignSelf: 'center',
+          height: 200,
+          width: 200,
+          resizeMode: 'contain',
+        }}
+        source={require('../Assets/Images/NASA.png')}></Image>
+
       <View style={style.container}>
         {/* <Text style={style.text}>Asteroid Name : {Asteroid.name}</Text>
             <Text style={style.text}>Asteroid ID : {Asteroid.id}</Text>
           <Text style={style.text}>Asteroid Desigantion : {Asteroid.designation}</Text> */}
-        <Text style={style.text}>Asteroid Name : {data.name}</Text>
-        <Text style={style.text}>Asteroid ID : {data.id}</Text>
-        <Text style={style.text}>
-          Asteroid Designation : {data.designation}
-        </Text>
+        <Text style={style.text}>Asteroid Name : </Text>
+        <Text style={style.TextinsideText}>{data.name}</Text>
+        <Text style={style.text}>Asteroid ID :</Text>
+        <Text style={style.TextinsideText}>{data.id}</Text>
+        <Text style={style.text}>Asteroid Designation :</Text>
+        <Text style={style.TextinsideText}>{data.designation}</Text>
       </View>
     </ImageBackground>
   );
@@ -76,5 +87,17 @@ const style = StyleSheet.create({
     paddingLeft: 15,
     borderWidth: 3,
     borderRadius: 20,
+  },
+  TextinsideText: {
+    // marginTop: 10,
+    margin: 5,
+    fontSize: 25,
+    // borderWidth:1,s
+    // borderColor:'white',
+    // backgroundColor:'white',
+    //   fontWeight: 'bold',
+    color: 'white',
+    //   marginBottom: 16,
+    paddingLeft: 10,
   },
 });

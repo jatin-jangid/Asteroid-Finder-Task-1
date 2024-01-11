@@ -61,6 +61,9 @@ function RNForm({navigation, route}: any) {
 
   return (
     <View style={style.container}>
+
+
+
       <ImageBackground
         source={require('../Assets/Images/background3.jpeg')}
         style={{flex: 1, width: mobileW, height: mobileH}}>
@@ -72,42 +75,42 @@ function RNForm({navigation, route}: any) {
             resizeMode: 'contain',
           }}
           source={require('../Assets/Images/NasaLogo.png')}></Image>
-        <Text
-          style={{
-            marginTop: -35,
-            color: 'white',
-            alignSelf: 'center',
-            fontSize: 20,
-          }}>
-          Asteroid Finder by{' '}
-          <Image
-            style={{height: 60, width: 60, resizeMode: 'contain'}}
-            source={require('../Assets/Images/NASA.png')}></Image>
-        </Text>
+      <Text
+        style={{
+          marginTop: -35,
+          color: 'white',
+          alignSelf: 'center',
+          fontSize: 20,
+        }}>
+        Asteroid Finder by{' '}
+        <Image
+          style={{height: 60, width: 60, resizeMode: 'contain'}}
+          source={require('../Assets/Images/NASA.png')}></Image>
+      </Text>
 
-        <TextInput
-          placeholder="Enter ID"
-          keyboardType="numeric"
-          maxLength={7}
-          style={style.input}
-          value={name}
-          onChangeText={setName}
-        />
-        {/* <Text style={style.text}>Entered text is {name}</Text> */}
-        {/* <Button title='Submit' onPress={()=>navigation.navigate("DataFromForm",{
+      <TextInput
+        placeholder="Enter ID"
+        keyboardType="numeric"
+        maxLength={7}
+        style={style.input}
+        value={name}
+        onChangeText={setName}
+      />
+      {/* <Text style={style.text}>Entered text is {name}</Text> */}
+      {/* <Button title='Submit' onPress={()=>navigation.navigate("DataFromForm",{
         id:name
       })}/> */}
 
-        <TouchableOpacity
-          disabled={name.length != 7}
-          style={name.length != 7 ? style.disabledButton : style.button}
-          onPress={onClickSubmit}>
-          <Text style={style.buttonText}>SUBMIT</Text>
-        </TouchableOpacity>
+      <TouchableOpacity
+        disabled={name.length != 7}
+        style={name.length != 7 ? style.disabledButton : style.button}
+        onPress={onClickSubmit}>
+        <Text style={style.buttonText}>SUBMIT</Text>
+      </TouchableOpacity>
 
-        <TouchableOpacity style={style.randomButton} onPress={onClickRandom}>
-          <Text style={style.buttonText}>RANDOM</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={style.randomButton} onPress={onClickRandom}>
+        <Text style={style.buttonText}>RANDOM</Text>
+      </TouchableOpacity>
       </ImageBackground>
     </View>
   );

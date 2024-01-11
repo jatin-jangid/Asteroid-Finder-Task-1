@@ -13,7 +13,8 @@ function HomeScreen( { navigation }:any ) {
       <Button title='Go to Details' onPress={()=> {navigation.navigate("Details",{
         name:'Namit'
       })}}/>
-      <Button title='Go to RNFlatlist' onPress={()=> {navigation.navigate("RNFlatlist")}}/>
+      <View>
+        <Button  title='Go to RNFlatlist' onPress={()=> {navigation.navigate("RNFlatlist")}}/></View>
     </View>
   );
 }

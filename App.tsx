@@ -19,13 +19,14 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
+    
     <NavigationContainer>
       <Stack.Navigator initialRouteName='RNForm'>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name='RNFlatlist' component={RNFlatlist}/>
-        <Stack.Screen name='RNForm' component={RNForm}/>
-        <Stack.Screen name='DataFromForm' component={ShowTextFromForm}/>
+        <Stack.Screen name='RNForm' component={RNForm} options={{headerShown:false}}/>
+        <Stack.Screen name='DataFromForm' component={ShowTextFromForm} options={{headerShown:false}}/>
 
       </Stack.Navigator>
     </NavigationContainer>

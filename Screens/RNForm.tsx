@@ -50,33 +50,33 @@ class RNForm extends Component<{navigation: NavigationPropType}, State> {
 
   onClickRandom = () => {
     let randomIndex = Math.floor(Math.random() * (20 - 1) + 1);
-    let URL = `https://api.nasa.gov/neo/rest/v1/neo/${this.state.data[randomIndex].id}?api_key=6vDonMsdUcHytDq0KOoUHaibANFJhfVBNcP884wK`;
-    fetch(URL)
-      .then(Response => Response.json())
-      .then(data => {
+    let found = 0;
+    this.state.data.forEach(Asteroid => {
+      if (Asteroid.id === this.state.data[randomIndex].id) {
+        found = 1;
         this.props.navigation.navigate('DataFromForm', {
-          data: data,
+          data: Asteroid,
         });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    // this.setState({name: this.state.data[randomIndex].id});
+      }
+    });
+    if (found === 0) {
+      Alert.alert('Invalid ID');
+    }
   };
 
   onClickSubmit = () => {
-    let URL = `https://api.nasa.gov/neo/rest/v1/neo/${this.state.name}?api_key=6vDonMsdUcHytDq0KOoUHaibANFJhfVBNcP884wK`;
-    fetch(URL)
-      .then(Response => Response.json())
-      .then(data => {
+    let found = 0;
+    this.state.data.forEach(Asteroid => {
+      if (Asteroid.id === this.state.name) {
+        found = 1;
         this.props.navigation.navigate('DataFromForm', {
-          data: data,
+          data: Asteroid,
         });
-      })
-      .catch(error => {
-        console.log(error);
-        Alert.alert('ID not found!');
-      });
+      }
+    });
+    if (found === 0) {
+      Alert.alert('Invalid ID', 'Please Enter a valid ID');
+    }
   };
 
   render() {

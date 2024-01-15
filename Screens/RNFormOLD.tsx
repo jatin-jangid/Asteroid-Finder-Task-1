@@ -21,7 +21,6 @@ function RNForm({navigation, route}: any) {
   const mobileH = Dimensions.get('window').height;
   const [name, setName] = useState('');
   const [data, setData] = useState<any>([]);
-
   const onClickRandom = () => {
     let randomIndex = Math.floor(Math.random() * (20 - 1) + 1);
     setName(data[randomIndex].id);
